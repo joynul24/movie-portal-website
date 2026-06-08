@@ -12,7 +12,7 @@ export default function MovieDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`/api/movies/${id}`)
+    fetch(`http://localhost:3000/movies/${id}`)
       .then(res => res.json())
       .then(data => {
         setMovie(data);
@@ -24,7 +24,7 @@ export default function MovieDetails() {
   }, [id]);
 
   const handleDelete = () => {
-    fetch(`/api/movies/${id}`, { method: "DELETE" })
+    fetch(`http://localhost:3000/movies/${id}`, { method: "DELETE" })
       .then(res => res.json())
       .then(data => {
         if (data.deletedCount > 0) {
@@ -46,7 +46,7 @@ export default function MovieDetails() {
       userEmail: user?.email
     };
 
-    fetch("/api/favorites", {
+    fetch("http://localhost:3000/favorites", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(favoriteData)

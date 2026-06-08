@@ -8,7 +8,7 @@ export default function AllMovies() {
 
   const fetchMovies = (searchQuery = "") => {
     setLoading(true);
-    let url = "/api/movies";
+    let url = "http://localhost:3000/movies";
     if (searchQuery) {
       url += `?search=${searchQuery}`;
     }

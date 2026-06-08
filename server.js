@@ -12,7 +12,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.MONGODB_URI;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.svgbh.mongodb.net/?appName=Cluster0`
 let client;
 
 if (uri) {
@@ -47,7 +47,7 @@ async function run() {
 run();
 
 // API Routes
-app.get("/api/movies", async (req, res) => {
+app.get("/movies", async (req, res) => {
   try {
     const { search } = req.query;
     let query = {};
@@ -61,7 +61,7 @@ app.get("/api/movies", async (req, res) => {
   }
 });
 
-app.get("/api/movies/featured", async (req, res) => {
+app.get("/movies/featured", async (req, res) => {
   try {
     // Sort by rating descending and limit to 6
     const result = await moviesCollection.find().sort({ rating: -1 }).limit(6).toArray();
@@ -71,7 +71,7 @@ app.get("/api/movies/featured", async (req, res) => {
   }
 });
 
-app.get("/api/movies/:id", async (req, res) => {
+app.get("/movies/:id", async (req, res) => {
   try {
     const id = req.params.id;
     if (!ObjectId.isValid(id)) return res.status(400).send({ error: "Invalid ID" });
@@ -83,7 +83,7 @@ app.get("/api/movies/:id", async (req, res) => {
   }
 });
 
-app.post("/api/movies", async (req, res) => {
+app.post("/movies", async (req, res) => {
   try {
     const movie = req.body;
     const result = await moviesCollection.insertOne(movie);
@@ -93,7 +93,7 @@ app.post("/api/movies", async (req, res) => {
   }
 });
 
-app.put("/api/movies/:id", async (req, res) => {
+app.put("/movies/:id", async (req, res) => {
   try {
     const id = req.params.id;
     if (!ObjectId.isValid(id)) return res.status(400).send({ error: "Invalid ID" });
@@ -117,7 +117,7 @@ app.put("/api/movies/:id", async (req, res) => {
   }
 });
 
-app.delete("/api/movies/:id", async (req, res) => {
+app.delete("/movies/:id", async (req, res) => {
   try {
     const id = req.params.id;
     if (!ObjectId.isValid(id)) return res.status(400).send({ error: "Invalid ID" });
@@ -131,8 +131,9 @@ app.delete("/api/movies/:id", async (req, res) => {
   }
 });
 
+
 // Favorites Routes
-app.get("/api/favorites/:email", async (req, res) => {
+app.get("/favorites/:email", async (req, res) => {
   try {
     const email = req.params.email;
     const result = await favoritesCollection.find({ userEmail: email }).toArray();
@@ -142,7 +143,7 @@ app.get("/api/favorites/:email", async (req, res) => {
   }
 });
 
-app.post("/api/favorites", async (req, res) => {
+app.post("/favorites", async (req, res) => {
   try {
     const favorite = req.body;
     // Prevent duplicates
@@ -158,7 +159,7 @@ app.post("/api/favorites", async (req, res) => {
   }
 });
 
-app.delete("/api/favorites/:id", async (req, res) => {
+app.delete("/favorites/:id", async (req, res) => {
   try {
     const id = req.params.id;
     if (!ObjectId.isValid(id)) return res.status(400).send({ error: "Invalid ID" });

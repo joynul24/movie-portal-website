@@ -41,7 +41,7 @@ export default function Home() {
   }, [slides.length]);
 
   useEffect(() => {
-    fetch("/api/movies/featured")
+    fetch("http://localhost:3000/movies/featured")
       .then(res => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();

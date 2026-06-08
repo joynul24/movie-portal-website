@@ -12,7 +12,7 @@ export default function UpdateMovie() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/movies/${id}`)
+    fetch(`http://localhost:3000/movies/${id}`)
       .then(res => res.json())
       .then(data => {
         setValue("title", data.title);
@@ -41,7 +41,7 @@ export default function UpdateMovie() {
 
     const movieData = { ...data, rating };
 
-    fetch(`/api/movies/${id}`, {
+    fetch(`http://localhost:3000/movies/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(movieData),
@@ -116,7 +116,7 @@ export default function UpdateMovie() {
               <label className="block text-sm font-semibold text-slate-300 mb-2">Duration (minutes)</label>
               <input 
                 type="number" 
-                {...register("duration", { required: "Duration is required", min: { value: 61, message: "Must be greater than 60 minutes" } })}
+                {...register("duration", { required: "Duration is required", min: { value: 5, message: "Must be greater than 5 minutes" } })}
                 className="w-full px-5 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
               />
               {errors.duration && <p className="text-red-400 text-xs mt-2">{errors.duration.message}</p>}
