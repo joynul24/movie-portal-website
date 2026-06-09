@@ -7,7 +7,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+// const PORT = 3000;
+
+app.use(cors({
+  origin: ["http://localhost:5173", "https://movie-portal-website.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
 
 app.use(cors());
 app.use(express.json());
