@@ -102,7 +102,7 @@ export default function AddMovie() {
               <label className="block text-sm font-semibold text-slate-300 mb-2">Duration (minutes)</label>
               <input 
                 type="number" 
-                {...register("duration", { required: "Duration is required", min: { value: 61, message: "Must be greater than 60 minutes" } })}
+                {...register("duration", { required: "Duration is required", min: { value: 5, message: "Must be greater than 6 minutes" } })}
                 className="w-full px-5 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                 placeholder="e.g., 120"
               />
