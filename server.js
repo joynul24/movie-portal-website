@@ -234,7 +234,7 @@ app.use(express.json());
 // MongoDB Setup (FIXED)
 // ======================
 
-const uri = process.env.MONGODB_URI;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.svgbh.mongodb.net/?appName=Cluster0`;
 
 if (!uri) {
   console.error("❌ MONGODB_URI missing in .env / Vercel env");
