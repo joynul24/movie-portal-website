@@ -12,6 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://movie-prtal-website.web.app",
       "https://movie-portal-website.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
