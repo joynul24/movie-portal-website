@@ -184,14 +184,11 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
-    app.get('*all', (req, res) => {
+    app.get('/*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
 
-  // app.listen(PORT, "0.0.0.0", () => {
-  //   console.log(`Server running on http://localhost:${PORT}`);
-  // });
 }
 
 app.get("/", (req, res) => {
@@ -199,3 +196,4 @@ app.get("/", (req, res) => {
 });
 
 startServer();
+export default app;
