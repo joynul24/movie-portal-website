@@ -41,7 +41,7 @@ export default function Home() {
   }, [slides.length]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/movies/featured")
+    fetch("https://movie-portal-website.vercel.app/movies/featured")
       .then(res => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();

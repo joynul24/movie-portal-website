@@ -29,7 +29,7 @@ export default function AddMovie() {
       creatorEmail: user?.email,
     };
 
-    fetch("http://localhost:3000/movies", {
+    fetch("https://movie-portal-website.vercel.app/movies", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(movieData),

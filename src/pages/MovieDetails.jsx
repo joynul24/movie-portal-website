@@ -12,7 +12,7 @@ export default function MovieDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/${id}`)
+    fetch(`https://movie-portal-website.vercel.app/movies/${id}`)
       .then(res => res.json())
       .then(data => {
         setMovie(data);
@@ -24,7 +24,7 @@ export default function MovieDetails() {
   }, [id]);
 
   const handleDelete = () => {
-    fetch(`http://localhost:3000/movies/${id}`, { method: "DELETE" })
+    fetch(`https://movie-portal-website.vercel.app/movies/${id}`, { method: "DELETE" })
       .then(res => res.json())
       .then(data => {
         if (data.deletedCount > 0) {
@@ -46,7 +46,7 @@ export default function MovieDetails() {
       userEmail: user?.email
     };
 
-    fetch("http://localhost:3000/favorites", {
+    fetch("https://movie-portal-website.vercel.app/favorites", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(favoriteData)

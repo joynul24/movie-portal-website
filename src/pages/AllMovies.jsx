@@ -8,7 +8,7 @@ export default function AllMovies() {
 
   const fetchMovies = (searchQuery = "") => {
     setLoading(true);
-    let url = "http://localhost:3000/movies";
+    let url = "https://movie-portal-website.vercel.app/movies";
     if (searchQuery) {
       url += `?search=${searchQuery}`;
     }

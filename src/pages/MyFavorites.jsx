@@ -10,7 +10,7 @@ export default function MyFavorites() {
 
   const fetchFavorites = () => {
     if (user && user.email) {
-      fetch(`http://localhost:3000/favorites/${user.email}`)
+      fetch(`https://movie-portal-website.vercel.app/favorites/${user.email}`)
         .then(res => res.json())
         .then(data => {
           setFavorites(data);
@@ -25,7 +25,7 @@ export default function MyFavorites() {
   }, [user]);
 
   const handleDeleteFavorite = (id) => {
-    fetch(`http://localhost:3000/favorites/${id}`, { method: "DELETE" })
+    fetch(`https://movie-portal-website.vercel.app/favorites/${id}`, { method: "DELETE" })
       .then(res => res.json())
       .then(data => {
         if (data.deletedCount > 0) {

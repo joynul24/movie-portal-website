@@ -12,7 +12,7 @@ export default function UpdateMovie() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/${id}`)
+    fetch(`https://movie-portal-website.vercel.app/movies/${id}`)
       .then(res => res.json())
       .then(data => {
         setValue("title", data.title);
@@ -41,7 +41,7 @@ export default function UpdateMovie() {
 
     const movieData = { ...data, rating };
 
-    fetch(`http://localhost:3000/movies/${id}`, {
+    fetch(`https://movie-portal-website.vercel.app/movies/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(movieData),
