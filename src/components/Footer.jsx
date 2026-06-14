@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -17,10 +17,10 @@ export default function Footer() {
               Your ultimate destination for discovering, tracking, and cataloging the cinematic world. Explore top-rated movies, build your favorites list, and experience the magic of cinema.
             </p>
             <div className="flex space-x-5">
-               <a href="#" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaFacebook size={20} /></a>
-               <a href="#" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaTwitter size={20} /></a>
-               <a href="#" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaInstagram size={20} /></a>
-               <a href="#" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaGithub size={20} /></a>
+               <a href="https://web.facebook.com/devjoynul" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaFacebook size={20} /></a>
+               <a href="https://www.linkedin.com/in/devjoynul/" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaLinkedinIn></FaLinkedinIn> </a>
+               <a href="https://www.instagram.com/devjoynul" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaInstagram size={20} /></a>
+               <a href="https://github.com/joynul24" className="text-slate-500 hover:text-white transition-colors bg-white/5 p-3 rounded-full border border-white/5 hover:border-white/20"><FaGithub size={20} /></a>
             </div>
           </div>
           <div>
@@ -35,12 +35,12 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Contact Us</h3>
             <ul className="space-y-4 text-slate-400">
               <li className="flex items-center gap-3">
-                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5"><span className="text-indigo-400">@</span></div> 
+                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5"><span className="text-indigo-400">🌐</span></div> 
                  <span>support@cinevault.com</span>
               </li>
               <li className="flex items-center gap-3">
-                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-indigo-400">#</div> 
-                 <span>+1 (555) 123-4567</span>
+                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-indigo-400">📞</div> 
+                 <span>+880 1301249019</span>
               </li>
               <li className="flex items-center gap-3">
                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-indigo-400">📍</div> 
